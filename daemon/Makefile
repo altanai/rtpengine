@@ -1,7 +1,9 @@
 TARGET=		rtpengine
 
-with_iptables_option ?= yes
-with_transcoding ?= yes
+# with_iptables_option ?= yes
+# with_transcoding ?= yes
+with_iptables_option ?= no
+with_transcoding ?= no
 
 # look for bcg729
 # system pkg-config
@@ -90,7 +92,7 @@ CFLAGS+=	-DRE_PLUGIN_DIR="\"/usr/lib/rtpengine\""
 
 ### compile time options:
 #CFLAGS+=	-DSRTCP_KEY_DERIVATION_RFC_COMPLIANCE
-#CFLAGS+=	-DTERMINATE_SDP_AT_BLANK_LINE
+CFLAGS+=	-DTERMINATE_SDP_AT_BLANK_LINE
 #CFLAGS+=	-DSTRICT_SDES_KEY_LIFETIME
 
 LDLIBS=		-lm
